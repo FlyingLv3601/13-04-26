@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . "/../src/controllers/CustomerController.php";
+require_once __DIR__ . "/../src/controllers/ProductController.php";
 
+#require_once __DIR__ . '/../../db/DB.php';
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($requestUri) {
@@ -8,9 +10,9 @@ switch ($requestUri) {
         CustomerController::index();
         break;
 
+
     default:
-        echo "<h1>Veikals</h1>";
-        echo "<p>Laipni lūgti veikalā!</p>";
+        productController::index();
         break;
 }
 
