@@ -21,7 +21,6 @@ class CustomerController
             echo "<td>" . htmlspecialchars($customers['points']) . "</td>";
             echo "</tr>";
         }
-
         echo "</table>";
     }
 }
