@@ -15,9 +15,7 @@ class productController
             echo "<h3 style='margin: 0 0 8px 0; font-size: 18px;'>" . htmlspecialchars($products['product_name']) . "</h3>";
             echo "<p style='margin: 0 0 10px 0; font-size: 13px; color: #555; height: 40px; overflow: hidden;'>" . htmlspecialchars($products['product_desc']) . "</p>";
             echo "<div style='font-size: 16px; color: #2e7d32; margin-bottom: 10px;'>" . htmlspecialchars($products['product_price']) . " €</div>";
-            echo "<button style='margin-left:75px;'>details</button>";
-            echo "</div>";
-            echo "</div>";  
+            echo "<button style='margin-left:75px;'><a href='product-detail.php?id=" . $products['product_id'] . "'>details</a></button>";            echo "</div>";  
         }
 
         echo "</table>";
