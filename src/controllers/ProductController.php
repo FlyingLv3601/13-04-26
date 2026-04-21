@@ -9,7 +9,7 @@ class productController
         $stmt = DB::query("SELECT * FROM product");
         $product = $stmt->fetchAll();
         foreach ($product as $products) {
-            echo "<div style='border:1px solid gray;display: flex;flex-direction: column;width: 220px;background: #ffffff;border-radius: 12px;margin: 10px;'>";
+            echo "<div style='border:1px solid gray;display: flex;flex-direction: column;width: 220px;background: #ffffff;border-radius: 12px; margin-top:60px; margin-bottom:60px; height: 350px;'>";
             echo "<img src='" . htmlspecialchars($products['product_image']) . "' style='width: 100%;height: 160px;border-radius: 12px 12px 0 0;'>";
             echo "<div style='padding: 12px;'>";
             echo "<h3 style='margin: 0 0 8px 0; font-size: 18px;'>" . htmlspecialchars($products['product_name']) . "</h3>";
