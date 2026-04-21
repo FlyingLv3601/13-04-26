@@ -8,20 +8,16 @@ class productController
     {
         $stmt = DB::query("SELECT * FROM product");
         $product = $stmt->fetchAll();
-
-        echo "<h1>Klienti</h1>";
-        echo "<table border='1' cellpadding='8' cellspacing='0'>";
-        echo "<tr><th>ID</th><th>Vārds</th><th>E-pasts</th><th>Punkti</th></tr>";
-
         foreach ($product as $products) {
-            echo "<tr>";
-            echo "<td>" . htmlspecialchars($products['product_id']) . "</td>";
-            echo "<td>" . htmlspecialchars($products['product_name']) . "</td>";
-            echo "<td>" . htmlspecialchars($products['product_price']) . "</td>";
-            echo "<td>" . htmlspecialchars($products['product_desc']) . "</td>";
-echo "<td><img alt='Product Image' src='" . htmlspecialchars($products['product_image']) . "' width='100'></td>";
-
-            echo "</tr>";
+            echo "<div style='border:1px solid gray;display: flex;flex-direction: column;width: 220px;background: #ffffff;border-radius: 12px;margin: 10px;'>";
+            echo "<img src='" . htmlspecialchars($products['product_image']) . "' style='width: 100%;height: 160px;border-radius: 12px 12px 0 0;'>";
+            echo "<div style='padding: 12px;'>";
+            echo "<h3 style='margin: 0 0 8px 0; font-size: 18px;'>" . htmlspecialchars($products['product_name']) . "</h3>";
+            echo "<p style='margin: 0 0 10px 0; font-size: 13px; color: #555; height: 40px; overflow: hidden;'>" . htmlspecialchars($products['product_desc']) . "</p>";
+            echo "<div style='font-size: 16px; color: #2e7d32; margin-bottom: 10px;'>" . htmlspecialchars($products['product_price']) . " €</div>";
+            echo "<button style='margin-left:75px;'>details</button>";
+            echo "</div>";
+            echo "</div>";  
         }
 
         echo "</table>";
