@@ -6,6 +6,8 @@ require_once __DIR__ . "/../src/controllers/CustomerController.php";
 require_once __DIR__ . "/../src/controllers/ProductController.php";
 require_once __DIR__ . "/../src/controllers/ProductDetailController.php";
 require_once __DIR__ . "/../src/controllers/OrderController.php";
+require_once __DIR__ . "/../src/controllers/IntroRender.php";
+
 
 
 
@@ -28,8 +30,11 @@ switch ($requestUri) {
     case '/orders':
         OrderController::index();
         break;
-    default:
+    case '/products':
         ProductController::index();
+        break;
+    default:
+        IntroRender::index();
         break;
 }
 ?>
