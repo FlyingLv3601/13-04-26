@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers</title>
+    <title>orders</title>
 
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -51,37 +51,49 @@
             margin-bottom: 20px;
         }
 
-        .customer-list {
+        .order-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
             gap: 20px;
         }
 
-        .customer-card {
+        .order-card {
             background: #fff;
             border-radius: 14px;
+            margin: 10px 0 0 0;
             box-shadow: 0 6px 15px rgba(0,0,0,0.06);
             padding: 15px;
             transition: 0.25s;
         }
 
-        .customer-card:hover {
+        .order-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
-        .customer-name {
+        .order-id {
             font-size: 17px;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .customer-email {
+        .order-date {
             color: #555;
             margin-bottom: 10px;
         }
 
-        .customer-phone {
+        .order-status {
+            color: #007bff;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .order-commnet {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .order-dev-date {
             color: #007bff;
             font-weight: 500;
         }
@@ -95,18 +107,17 @@
         <?php require __DIR__ . "/comp/header.php";?>
 
     <main>
-        <span>Customers</span>
+        <span>orders</span>
 
-        <div class="customer-list">
+        <div class="order-list">
 
-            <?php foreach($customer as $customers): ?>
-            <div class="customer-card">
-                <div class="customer-name">id: <?= htmlspecialchars($customers['customer_id']);?></div>
-                <div class="customer-name">name: <?= htmlspecialchars($customers['first_name']);?></div>
-                <div class="customer-email">email: <?= htmlspecialchars($customers['email']);?></div>
-                <div class="customer-order-count">Count: asd</div>
-                <div class="customer-phone">points: <?= htmlspecialchars(pointsCounter($customers['points']));?></div>
-
+            <?php foreach($order as $orders): ?>
+            <div class="order-card">
+                <div class="order-id">id: <?= htmlspecialchars($orders['order_id']);?></div>
+                <div class="order-date">date: <?= htmlspecialchars($orders['order_date']);?></div>
+                <div class="order-status">status: <?= htmlspecialchars($orders['order_status']);?></div>
+                <div class="order-commnet">commnet: <?= htmlspecialchars($orders['order_commnet']);?></div>
+                <div class="order-dev0-date">delivery date: <?= htmlspecialchars($orders['order_div_date']);?></div>
             </div>
             <?php endforeach; ?>
 
@@ -117,10 +128,3 @@
 
 </body>
 </html>
-
-
-<?php
-    function pointsCounter(int $points){
-        return $points * 10;
-    }
-?>

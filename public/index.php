@@ -5,6 +5,9 @@ ini_set('display_errors', 1);
 require_once __DIR__ . "/../src/controllers/CustomerController.php";
 require_once __DIR__ . "/../src/controllers/ProductController.php";
 require_once __DIR__ . "/../src/controllers/ProductDetailController.php";
+require_once __DIR__ . "/../src/controllers/OrderController.php";
+
+
 
 $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
 $params = [];
@@ -22,7 +25,9 @@ switch ($requestUri) {
     case '/product-detail':
         ProductDetailController::index($params['id'] ?? 0);
         break;
-
+    case '/orders':
+        OrderController::index();
+        break;
     default:
         ProductController::index();
         break;

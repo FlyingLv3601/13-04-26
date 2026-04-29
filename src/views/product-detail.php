@@ -124,9 +124,7 @@
 <body>
 
 <div class="wrapper">
-            <?php
-            require __DIR__ . "/comp/header.php";
-        ?>
+    <?php require __DIR__ . "/comp/header.php";?>
 
     <main>
         <div class="product-detail">
