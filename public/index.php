@@ -37,6 +37,9 @@ switch ($requestUri) {
     case '/save-product':
         CreateProductController::store();
         break;
+    case '/delete':
+        ProductDetailController::delete($params['id'] ?? 0);
+        break;
     default:
         IntroRender::index();
         break;

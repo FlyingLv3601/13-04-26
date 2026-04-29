@@ -136,7 +136,8 @@
                 <div class="product-desc"><?= htmlspecialchars($product['product_desc']) ?></div>
                 <div class="product-price"><?= $product['product_price'] ?> €</div>
                 <div class="product-id">Product ID: <?= $product['product_id'] ?></div>
-                <a href="/" class="back-btn">← Back to products</a>
+                <a href="/products" class="back-btn">← Back to products</a>
+                <a href="/delete?id=<?= $product['product_id'] ?>" >delete</a>
             </div>
         </div>
     </main>
