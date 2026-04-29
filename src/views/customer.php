@@ -109,7 +109,7 @@
                     <div class="customer-name">Name: <?= htmlspecialchars($customer['first_name']) ?></div>
                     <div class="customer-email">Email: <?= htmlspecialchars($customer['email']) ?></div>
                     <div class="customer-order-count">Orders: <?= $customer['order_count'] ?? 0 ?></div>
-                    <div class="customer-points">Points: <?= ($customer['points'] ?? 0) * 10 ?></div>
+                    <div class="customer-points">Points: <?= ($customer['order_count'] ?? 0) * 10 ?></div>
                 </div>
             <?php endforeach; ?>
         </div>
