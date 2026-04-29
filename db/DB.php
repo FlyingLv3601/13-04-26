@@ -7,7 +7,12 @@ class DB
     public static function getConnection(): PDO
     {
         if (self::$conn === null) {
-            $host = '192.168.10.62';
+            //$host = '192.168.10.62';
+            //$user = 'store_app';
+            //$pass = 'password';
+            //$db   = 'store_dev';
+
+            $host = 'localhost';
             $user = 'store_app';
             $pass = 'password';
             $db   = 'store_dev';

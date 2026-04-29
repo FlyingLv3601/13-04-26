@@ -18,13 +18,13 @@ if ($id > 0) {
         echo "<h1>" . htmlspecialchars($product['product_name']) . "</h1>";
         echo "<img src='" . htmlspecialchars($product['product_image']) . "' style='width: 300px;'>";
         echo "<p>" . htmlspecialchars($product['product_desc']) . "</p>";
-        echo "<p>Цена: " . $product['product_price'] . " €</p>";
-        echo "<p>ID товара: " . $product['product_id'] . "</p>";
-        echo "<br><a href='index.php'>Назад</a>";
+        echo "<p>price: " . $product['product_price'] . " €</p>";
+        echo "<p>ID: " . $product['product_id'] . "</p>";
+        echo "<br><a href='index.php'>back</a>";
     } else {
-        echo "Товар не найден";
+        echo "product not found";
     }
 } else {
-    echo "Неверный ID товара";
+    echo "wong product id";
 }
 ?>
