@@ -124,11 +124,9 @@
 <body>
 
 <div class="wrapper">
-    <header>
-        <a href="/">Products</a>
-        <a href="/customers">Customers</a>
-        <a href="#">Create Order</a>
-    </header>
+            <?php
+            require __DIR__ . "/comp/header.php";
+        ?>
 
     <main>
         <div class="product-detail">
