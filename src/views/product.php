@@ -151,9 +151,10 @@
                             <?= htmlspecialchars($product['product_price']) ?> $
                         </div>
 
-                        <button onclick="window.location.href='/?page=product-detail&id=<?= $product['product_id'] ?>'">
-                            Details
-                        </button>
+                        <a href="/product-detail?id=<?= $product['product_id'] ?>">
+                            <button>Details</button>
+                        </a>
+                        </a>
                     </div>
 
                 </div>

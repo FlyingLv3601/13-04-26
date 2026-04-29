@@ -1,8 +1,17 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once __DIR__ . "/../src/controllers/CustomerController.php";
 require_once __DIR__ . "/../src/controllers/ProductController.php";
+require_once __DIR__ . "/../src/controllers/ProductDetailController.php";
 
-#require_once __DIR__ . '/../../db/DB.php';
+$query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+$params = [];
+if ($query !== null) {
+    parse_str($query, $params);
+}
+
 $requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($requestUri) {
@@ -10,9 +19,12 @@ switch ($requestUri) {
         CustomerController::index();
         break;
 
+    case '/product-detail':
+        ProductDetailController::index($params['id'] ?? 0);
+        break;
 
     default:
-        productController::index();
+        ProductController::index();
         break;
 }
-
+?>
