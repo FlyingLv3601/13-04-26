@@ -81,7 +81,13 @@
             margin-bottom: 10px;
         }
 
-        .customer-phone {
+        .customer-order-count {
+            color: #28a745;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .customer-points {
             color: #007bff;
             font-weight: 500;
         }
@@ -91,25 +97,21 @@
 
 <div class="wrapper">
 
-
-        <?php require __DIR__ . "/comp/header.php";?>
+    <?php require __DIR__ . "/comp/header.php"; ?>
 
     <main>
         <span>Customers</span>
 
         <div class="customer-list">
-
-            <?php foreach($customer as $customers): ?>
-            <div class="customer-card">
-                <div class="customer-name">id: <?= htmlspecialchars($customers['customer_id']);?></div>
-                <div class="customer-name">name: <?= htmlspecialchars($customers['first_name']);?></div>
-                <div class="customer-email">email: <?= htmlspecialchars($customers['email']);?></div>
-                <div class="customer-order-count">Count: asd</div>
-                <div class="customer-phone">points: <?= htmlspecialchars(pointsCounter($customers['points']));?></div>
-
-            </div>
+            <?php foreach($customers as $customer): ?>
+                <div class="customer-card">
+                    <div class="customer-name">ID: <?= htmlspecialchars($customer['customer_id']) ?></div>
+                    <div class="customer-name">Name: <?= htmlspecialchars($customer['first_name']) ?></div>
+                    <div class="customer-email">Email: <?= htmlspecialchars($customer['email']) ?></div>
+                    <div class="customer-order-count">Orders: <?= $customer['order_count'] ?? 0 ?></div>
+                    <div class="customer-points">Points: <?= ($customer['points'] ?? 0) * 10 ?></div>
+                </div>
             <?php endforeach; ?>
-
         </div>
     </main>
 
@@ -117,10 +119,3 @@
 
 </body>
 </html>
-
-
-<?php
-    function pointsCounter(int $points){
-        return $points * 10;
-    }
-?>

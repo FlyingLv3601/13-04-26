@@ -1,0 +1,12 @@
+-- ALTER TABLE orders 
+-- ADD COLUMN customer_id INT AFTER order_id,
+-- ADD FOREIGN KEY (customer_id) REFERENCES customer(customer_id);
+
+
+-- SELECT * FROM orders;
+
+-- -- Пример: назначаем заказы разным пользователям
+-- UPDATE orders SET customer_id = 13 WHERE order_id IN (1, 2);
+-- UPDATE orders SET customer_id = 14 WHERE order_id IN (3, 4);
+-- UPDATE orders SET customer_id = 15 WHERE order_id IN (5, 6);
+-- UPDATE orders SET customer_id = 16 WHERE order_id = 7;
