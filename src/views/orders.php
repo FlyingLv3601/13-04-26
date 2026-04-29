@@ -118,6 +118,7 @@
                 <div class="order-status">status: <?= htmlspecialchars($orders['order_status']);?></div>
                 <div class="order-commnet">commnet: <?= htmlspecialchars($orders['order_commnet']);?></div>
                 <div class="order-dev0-date">delivery date: <?= htmlspecialchars($orders['order_div_date']);?></div>
+                <div class="order-dev0-date">Customer id: <?= htmlspecialchars($orders['customer_id']);?></div>
             </div>
             <?php endforeach; ?>
 
