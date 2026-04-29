@@ -27,7 +27,7 @@
 
         @keyframes letterSpacingAnim {
             0% {
-                letter-spacing: 100px;
+                letter-spacing: 80px;
                 opacity: 0;
             }
             100% {
